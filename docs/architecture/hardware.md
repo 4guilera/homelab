@@ -26,14 +26,22 @@
 | VLAN | 20 (LAB) |
 | IP | 10.0.20.X |
 
-## UGreen NAS
+## UGreen DXP4800 Pro — NAS
 
 | Attribute | Value |
 |-----------|-------|
+| Model | UGreen DXP4800 Pro |
+| Bays | 4 |
+| OS | TrueNAS SCALE |
 | Role | Network storage, Proxmox backup target |
 | Status | Pending initial configuration |
 | VLAN | 20 (LAB) |
 | IP | 10.0.20.X |
+
+**Notable capabilities:**
+- ZFS-based storage with snapshot support
+- REST API for automation and monitoring
+- SMB/NFS shares for Proxmox backup integration
 
 ## UniFi UDR7
 
