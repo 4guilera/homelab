@@ -7,14 +7,13 @@ Every component is documented, version-controlled, and deployed via automation.
 
 ## Hardware
 
-| Device | Model | Hostname | Role |
-|--------|-------|----------|------|
-| Router | UniFi UDR7 | — | Gateway, firewall, VLAN management |
-| Compute | Geekom A5 Pro | proxmox-node | Proxmox VE hypervisor |
-| PC | Custom Windows 11 | Tantive-IV | Primary dev workstation (WSL2) |
-| Laptop | MacBook Air M5 | Razorcrest | Mobile dev |
-| Mini PC | Mac Mini M4 | OpenPaul | Headless — future LLM host |
-| NAS | UGreen DXP4800 Pro | ugreennas | Network storage — TrueNAS SCALE |
+| Device | Model | Role |
+|--------|-------|------|
+| Router | UniFi UDR7 | Gateway, firewall, VLAN management |
+| Compute | Geekom A5 Pro | Proxmox VE hypervisor |
+| PC | Custom Windows 11 | Primary dev workstation (WSL2) |
+| Mini PC | Mac Mini M4 | Headless — OpenClaw LLM Host |
+| NAS | UGreen DXP4800 Pro | TrueNAS SCALE |
 
 ## Network
 
