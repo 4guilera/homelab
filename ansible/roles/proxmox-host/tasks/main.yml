@@ -1,0 +1,38 @@
+---
+- name: Remove Proxmox enterprise repo (requires paid subscription)
+  ansible.builtin.file:
+    path: /etc/apt/sources.list.d/pve-enterprise.list
+    state: absent
+
+- name: Add Proxmox no-subscription repo
+  ansible.builtin.apt_repository:
+    repo: "deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription"
+    state: present
+    filename: pve-no-subscription
+
+- name: Harden SSH — disable password authentication
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#?PasswordAuthentication'
+    line: 'PasswordAuthentication no'
+    backup: true
+  notify: Restart sshd
+
+- name: Harden SSH — disable empty passwords
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#?PermitEmptyPasswords'
+    line: 'PermitEmptyPasswords no'
+  notify: Restart sshd
+
+- name: Harden SSH — set max auth tries
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^#?MaxAuthTries'
+    line: 'MaxAuthTries 4'
+  notify: Restart sshd
+
+- name: Ensure sshd is enabled
+  ansible.builtin.service:
+    name: sshd
+    enabled: true

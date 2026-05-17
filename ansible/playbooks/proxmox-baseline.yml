@@ -1,0 +1,8 @@
+---
+- name: Apply Proxmox host baseline
+  hosts: proxmox
+  gather_facts: true
+
+  roles:
+    - role: common
+    - role: proxmox-host

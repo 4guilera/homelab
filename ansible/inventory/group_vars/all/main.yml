@@ -1,0 +1,19 @@
+timezone: America/Chicago
+ntp_servers:
+  - time.cloudflare.com
+  - pool.ntp.org
+
+common_packages:
+  - curl
+  - wget
+  - git
+  - vim
+  - htop
+  - net-tools
+  - nmap
+  - tcpdump
+  - unzip
+  - jq
+  - ca-certificates
+  - gnupg
+  - lsb-release

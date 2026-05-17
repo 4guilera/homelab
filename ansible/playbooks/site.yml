@@ -1,0 +1,3 @@
+---
+- name: Apply baseline to all hosts
+  import_playbook: proxmox-baseline.yml
