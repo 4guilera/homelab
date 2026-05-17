@@ -21,18 +21,17 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: |
-          pip install ansible ansible-lint yamllint
+        run: pip install ansible ansible-lint yamllint
 
       - name: Install Ansible collections
-        run: |
-          ansible-galaxy collection install -r ansible/requirements.yml
+        run: ansible-galaxy collection install -r ansible/requirements.yml
 
       - name: Run yamllint
         run: yamllint ansible/ --config-file .yamllint.yml
 
       - name: Run ansible-lint
-        run: ansible-lint ansible/
+        working-directory: ansible
+        run: ansible-lint .
 
   detect-secrets:
     name: Secret scan
